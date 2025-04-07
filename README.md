@@ -14,7 +14,7 @@ with some additional goals:
 
 Some Code (c) [Jonas Persson](https://github.com/jop-io) and
 [Tobbe Lundberg](https://github.com/Tobbe) which they have gracefully released
-under a MIT license. See [LICENCE](LICENSE)
+under a MIT license. See [LICENSE](LICENSE)
 
 This implementation is written in TypeScript but the following specification
 should be applicable to other languages as well. But some language specific
@@ -23,12 +23,12 @@ modifications may be required.
 ## Important Caveat
 
 As explained in the [research](#research) section below there are some bank
-account numbers that is impossible to validate (as they do not have a check
+account numbers that are impossible to validate (as they do not have a check
 digit) that are indistinguishable from validatable accounts. I recommend using
-this library on form input fields but do not prevent form submission if the
+this library on form input fields, but do not prevent form submission if the
 account number is reported as invalid. A good idea would be something like a
-warning saying "there is a chance this is not a valid bank account number
-you may want to double check."
+warning saying "There is a chance this is not a valid bank account number;
+you may want to double-check."
 
 ## Specification [v1]
 
@@ -49,12 +49,12 @@ class Kontonummer {
 - `accountNumber` the allowed length varies, further explained in section
   [Account Number](#account-number)
   White-space should be allowed in any position. Basically, only characters
-  matches the regex `/\d/` should be taken into consideration all other
+  matching the regex `/\d/` should be taken into consideration; all other
   characters should be discarded.
 - `sortingCodeAndAccountNumber` should be one of the following formats
   (where `S` is sorting code, `A` is account number and `C` is a check digit.
   White-space should be allowed in any position. Basically, only characters
-  matches the regex `/\d/` should be taken into consideration all other
+  matching the regex `/\d/` should be taken into consideration; all other
   characters should be discarded.
   - `SSSS,AC`
   - `SSSSAC`
